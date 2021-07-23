@@ -1,8 +1,21 @@
+
+
+const header_html = `
+<div class="wrapper">
+    <div id="menu">
+      <ul>
+        <li>1 menu item</li>
+        <li>2 menu item</li>
+        <li>3 menu item</li>
+      </ul>
+    </div> 
+  </div>
+`
+
+
 $(document).ready(function(){
 
-    // load in the header content
-    $("#header-content").load("head.html"); 
-    console.log('loaded?')
+    $("#header-container").html(header_html)
 
     // button interaction
     $("#games-button-left").click(function(){
