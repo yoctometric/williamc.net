@@ -10,6 +10,15 @@ const header_html = `
   </div>
 `
 
+const game_html_template = `
+<div class="game" id="GAME_ID">
+  <div class="game-iframe">
+    GAME_IFRAME
+  </div>
+  <p class="game-desc">GAME_DESC</p>
+</div>
+`
+
 
 $(document).ready(function(){
 
@@ -34,6 +43,19 @@ function loadGameElements(file) {
 
   $.getJSON(file, function(json) {
     console.log(json[0].title);
+
+    // for each entry, generate an html container for the game
+    for(var i = 0; i < json.length; i++) {
+      console.log('gennin ' + i.toString())
+
+      let html = game_html_template.replace("GAME_ID", 'game-'+i.toString()) // set the game div id
+      html = html.replace('GAME_IFRAME', json[i].html) // set the iframe
+      html = html.replace('GAME_DESC', json[i].desc) // set the description
+
+      console.log('genned:\n' + html)
+      // now actually apply the html
+      $('#games-container').append(html)
+    }
   });
 
 }
