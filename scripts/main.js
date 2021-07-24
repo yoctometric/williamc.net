@@ -31,10 +31,9 @@ $(document).ready(function(){
 
 // reading json data for game links
 function loadGameElements(file) {
-  console.log("getting");
+
   $.getJSON(file, function(json) {
-    console.log(json);
-    console.log('got');
+    console.log(json[0].title);
   });
 
 }
