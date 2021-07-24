@@ -1,12 +1,17 @@
 [
     {
-        "title" : "yeet title",
+        "title" : "Evolving Boid Flock",
         "desc" : "description for boid flocks",
         "html" : "<iframe src=\"https://itch.io/embed/652395?bg_color=202020&amp;fg_color=00e82a&amp;link_color=7bfff6&amp;border_color=333333\" width=\"208\" height=\"167\" frameborder=\"0\"><a href=\"https://willc-squared.itch.io/boid-battler\">Evolving Boid Flocks by WillC_Squared</a></iframe>"
     },
     {
-        "title" : "",
-        "desc" : "",
-        "html" : ""
+        "title" : "Spores of Corruption",
+        "desc" : "Description for spores of corruption",
+        "html" : "<iframe src=\"https://itch.io/embed/739236?bg_color=000000&amp;fg_color=ffffff&amp;link_color=2ce8f4&amp;border_color=333333\" width=\"552\" height=\"167\" frameborder=\"0\"><a href=\"https://willc-squared.itch.io/spores-of-corruption\">Spores of Corruption by WillC_Squared</a></iframe>"
+    },
+    {
+        "title" : "Staying Dry in the Thunderstorm",
+        "desc" : "Description for staying dry in the thunderstorm",
+        "html" : "<iframe src=\"https://itch.io/embed/680179?bg_color=435062&amp;fg_color=ffffff&amp;link_color=001cab&amp;border_color=2f3c70\" width=\"208\" height=\"167\" frameborder=\"0\"><a href=\"https://willc-squared.itch.io/staying-dry\">Staying Dry in the Thunderstorm by WillC_Squared</a></iframe>"
     }
 ]

@@ -19,6 +19,9 @@ const game_html_template = `
 </div>
 `
 
+//global vars
+let game_menu_index = 0;
+let game_menu_size = 0;
 
 $(document).ready(function(){
 
@@ -27,11 +30,11 @@ $(document).ready(function(){
 
     // link button interaction
     $("#games-button-left").click(function(){
-        alert('clicked!');
+  scrollGameElements(-1);
     });
     
     $("#games-button-right").click(function(){
-        alert('clicked!');
+      scrollGameElements(1);
     });
 
     // load in the itch.io game elements
@@ -43,6 +46,7 @@ function loadGameElements(file) {
 
   $.getJSON(file, function(json) {
     console.log(json[0].title);
+    game_menu_size = json.length;
 
     // for each entry, generate an html container for the game
     for(var i = 0; i < json.length; i++) {
@@ -56,7 +60,27 @@ function loadGameElements(file) {
       console.log('genned:\n' + html)
       // now actually apply the html
       $('#games-container').append(html)
+
+      // if the index is past 0, hide the element so only one will show
+      $('#game-'+i.toString()).prop("hidden", true);
     }
   });
+}
+
+function scrollGameElements(dir) {
+  console.log('old index: ' + game_menu_index.toString())
+  $('#game-'+game_menu_index.toString()).prop("hidden", true); // hide current
+  console.log('new index: ' + game_menu_index.toString())
+
+  game_menu_index += dir;
+  
+  if (game_menu_index >= game_menu_size) {
+    game_menu_index = 0;
+  } 
+  else if (game_menu_index < 0) {
+    game_menu_index = game_menu_size - 1;
+  }
+
+  $('#game-'+game_menu_index.toString()).prop("hidden", false); // show new
 
 }
