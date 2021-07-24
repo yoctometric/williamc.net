@@ -50,6 +50,7 @@ function loadGameElements(file) {
 
       let html = game_html_template.replace("GAME_ID", 'game-'+i.toString()) // set the game div id
       html = html.replace('GAME_IFRAME', json[i].html) // set the iframe
+      console.log('setting the iframe to '+ json[i].html)
       html = html.replace('GAME_DESC', json[i].desc) // set the description
 
       console.log('genned:\n' + html)
