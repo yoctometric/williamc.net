@@ -1,8 +1,8 @@
 [
     {
         "title" : "yeet title",
-        "desc" : "",
-        "html" : ""
+        "desc" : "description for boid flocks",
+        "html" : "<iframe src=\"https://itch.io/embed/652395?bg_color=202020&amp;fg_color=00e82a&amp;link_color=7bfff6&amp;border_color=333333\" width=\"208\" height=\"167\" frameborder=\"0\"><a href=\"https://willc-squared.itch.io/boid-battler\">Evolving Boid Flocks by WillC_Squared</a></iframe>"
     },
     {
         "title" : "",
