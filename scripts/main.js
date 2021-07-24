@@ -69,7 +69,7 @@ function loadGameElements(file) {
 
 function scrollGameElements(dir) {
   console.log('old index: ' + game_menu_index.toString())
-  $('#game-'+game_menu_index.toString()).prop("hidden", true); // hide current
+  $('#game-'+game_menu_index.toString()).attr("hidden",true); // hide current
   console.log('new index: ' + game_menu_index.toString())
 
   game_menu_index += dir;
@@ -81,6 +81,6 @@ function scrollGameElements(dir) {
     game_menu_index = game_menu_size - 1;
   }
 
-  $('#game-'+game_menu_index.toString()).prop("hidden", false); // show new
+  $('#game-'+game_menu_index.toString()).attr("hidden",true); // show new
 
 }
