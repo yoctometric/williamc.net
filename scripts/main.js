@@ -1,5 +1,3 @@
-
-
 const header_html = `
 <div class="wrapper">
     <div id="menu">
@@ -15,9 +13,10 @@ const header_html = `
 
 $(document).ready(function(){
 
+    // initialize header
     $("#header-container").html(header_html)
 
-    // button interaction
+    // link button interaction
     $("#games-button-left").click(function(){
         alert('clicked!');
     });
@@ -25,4 +24,16 @@ $(document).ready(function(){
     $("#games-button-right").click(function(){
         alert('clicked!');
     });
+
+    // load in the itch.io game elements
+    loadGameElements("./data/itch_games.json");
 });
+
+// reading json data for game links
+function loadGameElements(file) {
+
+  $.getJSON(file, function(json) {
+    console.log(json);
+  });
+
+}
