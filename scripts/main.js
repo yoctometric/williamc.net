@@ -62,7 +62,7 @@ function loadGameElements(file) {
       $('#games-container').append(html)
 
       // if the index is past 0, hide the element so only one will show
-      $('#game-'+i.toString()).attr("hidden", true);
+      //$('#game-'+i.toString()).attr("hidden", true);
     }
   });
 }
