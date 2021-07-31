@@ -1,21 +1,36 @@
 const header_html = `
 <div class="wrapper">
-    <div id="menu">
+  <div class="header-bar">
+    <div id="logo" class="horizontal-list">
+      <img src="images/logo_transparent.png" alt="site logo" id="site-logo">
+    </div>
+    <div id="menu" class="horizontal-list">
       <ul>
-        <li>1 menu item</li>
-        <li>2 menu item</li>
-        <li>3 menu item</li>
+        <li>Games</li>
+        <li>About</li>
+        <li>Contact</li>
       </ul>
     </div> 
   </div>
+</div>
 `
 
 const game_html_template = `
-<div class="game" id="GAME_ID">
-  <div class="game-iframe">
-    GAME_IFRAME
+<div class="game-panel" id="GAME-ID">
+  <div class="game-panel-left">
+    <img src="images/boids_gif.gif" class="game-panel-gif" alt="gameplay gif" id="GAME-ID-GIF">
+    <button class="game-panel-button" id="GAME-ID-BUTTON">
+      Play on Itch.io
+    </button>
   </div>
-  <p class="game-desc">GAME_DESC</p>
+  <div class="game-panel-right">
+    <h3 class="game-panel-title" id="GAME-ID-TITLE">
+      Game Title Goes Here
+    </h3>
+    <p class="game-panel-desc" id="GAME-ID-DESC">
+      placeholder desc
+    </p>
+  </div>
 </div>
 `
 
@@ -45,32 +60,47 @@ $(document).ready(function(){
 function loadGameElements(file) {
 
   $.getJSON(file, function(json) {
-    console.log(json[0].title);
     game_menu_size = json.length;
 
     // for each entry, generate an html container for the game
     for(var i = 0; i < json.length; i++) {
-      console.log('gennin ' + i.toString())
+      let id = 'game-'+i.toString();
+      let html = game_html_template.replace("GAME-ID", id); // set the game div id
+      html = html.replace("GAME-ID-TITLE", id + "-title"); // set the title id
+      html = html.replace("GAME-ID-GIF", id + "-gif"); // set the gif id
+      html = html.replace("GAME-ID-DESC", id + "-desc"); // set the desc id
+      html = html.replace("GAME-ID-BUTTON", id + "-button"); // set the button id
 
-      let html = game_html_template.replace("GAME_ID", 'game-'+i.toString()) // set the game div id
-      html = html.replace('GAME_IFRAME', json[i].html) // set the iframe
-      console.log('setting the iframe to '+ json[i].html)
-      html = html.replace('GAME_DESC', json[i].desc) // set the description
+      id = '#' + id; // set the id for ue with jquery
 
-      console.log('genned:\n' + html)
-      // now actually apply the html
-      $('#games-container').append(html)
+      // apply the html
+      if (i == 0) {
+        // for the first element, replace the placeholder html
+        $('#games-container').html(html);
 
-      // if the index is past 0, hide the element so only one will show
-      //$('#game-'+i.toString()).attr("hidden", true);
+      } else {
+        // if the index is past 0, append and hide the element so only one will show
+        $('#games-container').append(html);
+
+        $(id).css("display", "none");
+      }
+
+      let link = json[i].link;
+
+      // update the contents of the added html to contain data from the itch_games json
+      $(id + '-title').html(json[i].title);
+      $(id + '-desc').html(json[i].desc);
+      $(id + '-gif').attr("src", json[i].gif_path);
+      $(id + '-button').click(function (url) {
+        window.open(link, "_blank")
+    });
+
     }
   });
 }
 
 function scrollGameElements(dir) {
-  console.log('old index: ' + game_menu_index.toString())
-  $('#game-'+game_menu_index.toString()).attr("hidden",true); // hide current
-  console.log('new index: ' + game_menu_index.toString())
+  $('#game-'+game_menu_index.toString()).css("display", "none"); // hide old
 
   game_menu_index += dir;
   
@@ -81,6 +111,6 @@ function scrollGameElements(dir) {
     game_menu_index = game_menu_size - 1;
   }
 
-  $('#game-'+game_menu_index.toString()).attr("hidden",true); // show new
+  $('#game-'+game_menu_index.toString()).css("display", "block") // show new
 
 }
