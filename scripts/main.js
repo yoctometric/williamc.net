@@ -2,13 +2,17 @@ const header_html = `
 <div class="wrapper">
   <div class="header-bar">
     <div id="logo" class="horizontal-list">
-      <img src="images/logo_transparent.png" alt="site logo" id="site-logo">
+      <a href="index.html">
+        <img src="images/logo_transparent.png" alt="site logo" id="site-logo">
+      </a>
     </div>
     <div id="menu" class="horizontal-list">
       <ul>
-        <li>Games</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li class="menu-item"><a href="#games">Games</a></li>
+        <li class="menu-item"><a href="#code">Code</a></li>
+        <li class="menu-item"><a href="#contact">Contact</a></li>
+        <li class="menu-item"><a href="data/Resume-Fall-2021.pdf" target="_blank">Resume</a></li>
+        <li class="menu-item"><a href="https://github.com/yoctometric/" target="_blank">Github</a></li>
       </ul>
     </div> 
   </div>

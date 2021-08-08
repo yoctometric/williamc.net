@@ -2,6 +2,15 @@
 https://coolors.co/1c2321-7d98a1-5e6572-a9b4c2-eef1ef
 https://coolors.co/343e3d-607466-aedcc0-7bd389-38e4ae
 https://coolors.co/1f363d-40798c-70a9a1-9ec1a3-cfe0c3 <- insp
+
+a: #DFEAD7  <- super light green
+g: #CADDC8  <- halfway
+b: #B4CFB8  <- light green
+c: #40798C  <- teal
+f: #2E5561  <- halfway
+d: #1B3036  <- dark teal
+e: black    <- (obvious)
+
 */
 
 
@@ -10,6 +19,15 @@ html {
   font-family: 'Roboto', sans-serif;
 
   background-color: #DFEAD7;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 h2 {
@@ -22,13 +40,12 @@ h2 {
 }
 
 p, li {
-  font-size: 18px;
+  font-size: 22px;
   color: #1B3036;
 
   line-height: 2;
   letter-spacing: 1px;
 }
-
 
 .wrapper {
   margin: 10px auto;
@@ -38,16 +55,16 @@ p, li {
   border-radius: 5px;
 }
 
-.horizontal-list {
-  display: flex;
-  justify-content: flex-end;
+.body-paragraph {
+  margin: 10px 2%;
 }
+
 
 .horizontal-list ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: inline-flex
+  display: inline-flex;
 }
 
 .horizontal-list li {
@@ -62,10 +79,14 @@ p, li {
   align-items: center;
 }
 
-#menu {
+.menu-item {
   text-decoration: underline;
 }
 
+.menu-item:hover {
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+}
 
 #site-logo {
   width: 40px;
@@ -78,7 +99,7 @@ p, li {
   border-radius: 5px;
   justify-content: center;
   display: flex;
-  margin-bottom: 50px;
+  margin-bottom: 0;
 }
 
 #games-section > {
@@ -88,6 +109,7 @@ p, li {
 #games-container {
   width: 95%;
   height: 400px;
+  margin: 0;
 }
 
 .games-button {
@@ -97,14 +119,25 @@ p, li {
   border-radius: 5px;
   flex: none;
   border: none;
+  box-shadow: 0 4px #2E5561;
+
+  margin-bottom: 14px;
+  margin-top: 10px;
+}
+
+.games-button:active {
+  margin-bottom: 10px;
+  box-shadow: none;
 }
 
 #games-button-left {
-  margin: 10px auto 10px 10px;
+  margin-left: 10px;
+  margin-right: auto;
 }
 
 #games-button-right {
-  margin: 10px 10px 10px auto;
+  margin-left: auto;
+  margin-right: 10px;
 }
 
 .scale-svg {
@@ -115,7 +148,6 @@ p, li {
 .game-panel {
   width: 100%;
   height: 100%;
-
 }
 
 .game-panel * {
@@ -172,17 +204,74 @@ p, li {
 
 .game-panel-button {
   position: absolute;
-  background-color: #40798C;
-  color: #B4CFB8;
+  background-color: #DFEAD7;
+  color: #40798C;
   border: none;
   border-radius: 5px;
   font-size: 26px;
-  text-shadow: 2px 2px 0px black;
+  text-shadow: 1.5px 1.5px 0px black;
 
-  bottom: 0;
+  bottom: 4px;
   left: 2%;
   margin-bottom: 10px;
   margin-top: 10px;
   width: 96%;
   height: 90px;
+
+  font-weight: bold;
+  box-shadow: 0 4px #B4CFB8;
+}
+
+.game-panel-button:active {
+  bottom: 0px;
+  box-shadow: none;
+  text-shadow: .5px .5px 0px black;
+}
+
+.game-panel-button:hover {
+  text-shadow: .5px .5px 0px black;
+}
+
+#profile-picture {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.adjacent-li {
+  margin: 0;
+  padding: 0;
+}
+
+#menu {
+  width: auto;
+}
+
+#logo {
+  width: auto;
+}
+
+#about-left {
+  width: 25%;
+}
+
+#about-right {
+  width: 75%;
+}
+
+#about-right p {
+  font-size: 28px;
+}
+
+.email-link {
+  text-decoration: underline;
+}
+
+.section-spacer {
+  height: 75px;
+}
+
+.link {
+  text-decoration: underline;
 }

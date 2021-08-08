@@ -3,18 +3,18 @@
         "title" : "Evolving Boid Flocks",
         "gif_path" : "images/boids_gif.gif",
         "link" : "https://willc-squared.itch.io/boid-battler",
-        "desc" : "description description description description description description description description description description description description description description "
+        "desc" : "Two seperate teams of <a href='https://en.wikipedia.org/wiki/Boids' target='_blank' class='link'>boids</a> fight each other by dealing damange when in range and facing an enemy. Each battle, the best boid of each team reproduces the next generation. "
     },
     {
         "title" : "Spores of Corruption",
         "gif_path" : "images/spores_gif.gif",
         "link" : "https://willc-squared.itch.io/spores-of-corruption",
-        "desc" : "description"
+        "desc" : "A submission to the <a href='https://itch.io/jam/extra-credits-game-jam-6' target='_blank' class='link'>Extra Credits Game Jam #6</a>. Use your drone to safely separate infected citizens and cure them of corruption, and detonate spores a safe distance away from the uninfected."
     },
     {
         "title" : "Staying Dry in the Thunderstorm",
         "gif_path" : "images/thunderstorm_gif.gif",
         "link" : "https://willc-squared.itch.io/staying-dry",
-        "desc" : "Made for the Rain Jam 2020. Keep your dog dry and dodge lightning strikes for as long as you can."
+        "desc" : "Made for the <a href='https://itch.io/jam/rain' target='_blank' class='link'>Rain Jam 2020</a>. Keep your dog dry with your umbrella and dodge lightning strikes for as long as you can by calling your dog to heel when they are in danger."
     }
 ]
