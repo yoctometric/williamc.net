@@ -3,7 +3,7 @@
         "title" : "Evolving Boid Flocks",
         "gif_path" : "images/boids_gif.gif",
         "link" : "https://willc-squared.itch.io/boid-battler",
-        "desc" : "Two seperate teams of <a href='https://en.wikipedia.org/wiki/Boids' target='_blank' class='link'>boids</a> fight each other by dealing damange when in range and facing an enemy. Each battle, the best boid of each team reproduces the next generation. "
+        "desc" : "Two seperate teams of <a href='https://en.wikipedia.org/wiki/Boids' target='_blank' class='link'>boids</a> fight each other by dealing damange when in range and facing an enemy. Each battle, the best boid of each team parents the next generation."
     },
     {
         "title" : "Spores of Corruption",
